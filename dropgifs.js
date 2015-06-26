@@ -10,7 +10,6 @@ if (Meteor.isClient) {
 
   Template.gif.events({
     'click .delete': function(event) {
-      console.log(this._id)
       Gifs.remove(this._id)
     }
   });
@@ -18,7 +17,6 @@ if (Meteor.isClient) {
   Template.submission.events({
     'submit .submission': function(event) {
       gif_url = event.target.submission.value
-      console.log(gif_url);
       Gifs.insert({
         url: gif_url,
         createdAt: new Date()
