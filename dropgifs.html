@@ -1,0 +1,31 @@
+<head>
+  <title>dropgifs</title>
+</head>
+
+<body>
+  <h1>Dropgifs</h1>
+
+  {{> submission}}
+  <ul class="gifs">
+      {{#each gifs}}
+        {{> gif}}
+      {{/each}}
+  </ul>
+</body>
+
+
+
+<template name="submission">
+  <form class="submission">
+    <input type="text" name="submission" placeholder="Link to gif"/>
+  </form>
+</template>
+
+<template name="gif">
+  <li>
+    <div class="gif-container">
+      <img src={{url}} />
+      <span class="delete">&times;</span>
+    </div>
+  </li>
+</template>
