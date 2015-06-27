@@ -8,9 +8,23 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.gif.created = function () {
+    this.showing = new ReactiveVar(true);
+  }
+
+  Template.gif.helpers({
+    showing: function () {
+      return Template.instance().showing.get()
+    }
+  })
+
   Template.gif.events({
     'click .delete': function(event) {
       Gifs.remove(this._id)
+    },
+    'click .collapse': function(event, template) {
+      showing_now = template.showing.get()
+      template.showing.set(!showing_now);
     }
   });
 

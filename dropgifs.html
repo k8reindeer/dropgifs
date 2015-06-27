@@ -23,9 +23,13 @@
 
 <template name="gif">
   <li>
+    <a class="collapse"> Collapse </a>
+    {{#if showing}}
     <div class="gif-container">
+
       <img src={{url}} />
       <span class="delete">&times;</span>
     </div>
+    {{/if}}
   </li>
 </template>
